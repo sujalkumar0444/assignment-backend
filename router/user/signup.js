@@ -24,7 +24,7 @@ router.post("/", isFormComplete, async (req, res) => {
       let username = body.username;
       let user = await Users.findOne({ username });
       if (user) {
-        return res.status(400).send("User already exists");
+        return res.status(400).send("Account with this username already exists");
       }
 
     const EncryptedPass = CryptoJS.AES.encrypt(

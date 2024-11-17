@@ -32,7 +32,7 @@ router.post('/', upload.array('images', 10), async (req, res) => {
     // console.log(title);
     // console.log(files);
 
-    if (!title || !description || !files || files.length === 0) {
+    if (!title || !description || !files || files.length === 0 || !tags) {
       return res.status(400).json({ message: 'All fields are required, including at least one image.' });
     }
 
